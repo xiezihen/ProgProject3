@@ -1,0 +1,20 @@
+﻿@model IEnumerable<BlogProject.Models.Teacher>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Teachers</h2>
+<nav>
+    <a class="navlink" href="/Teacher/New">New Teacher</a>
+</nav>
+<form action="/Teacher/List" method="GET">
+    <input type="text" name="SearchKey" autocomplete="off" />
+    <input type="submit" value="Search" />
+</form>
+<ul>
+    @foreach (var teacher in Model)
+    {
+        <li><a href="/Teacher/Show/@teacher.teacherid">@teacher.teacherfname @teacher.teacherlname</a></li>
+    }
+</ul>

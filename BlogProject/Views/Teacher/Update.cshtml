@@ -1,0 +1,41 @@
+﻿@model BlogProject.Models.Teacher
+@{
+    ViewBag.Title = "Update";
+}
+
+<!DOCTYPE html>
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/Teacher/List">Back To Teachers</a>
+    </nav>
+    <h2>Update @Model.teacherfname @Model.teacherlname</h2>
+    <form method="POST" action="/Teacher/Update/@Model.teacherid">
+        <div class="inputrow">
+            <label for="teacherfname">First Name:</label>
+            <input type="text" value="@Model.teacherfname" id="teacherfname" name="teacherfname" />
+
+        </div>
+        <div class="inputrow">
+            <label for="teacherlname">Last Name:</label>
+            <input type="text" value="@Model.teacherlname" id="teacherlname" name="teacherlname" />
+
+        </div>
+        <div class="inputrow">
+            <label for="employeenumber">Employee#:</label>
+            <input type="text" value="@Model.enumber" id="employeenumber" name="employeenumber" />
+        </div>
+        <div class="inputrow">
+            <label for="date">Hiredate</label>
+            <input type="datetime-local" id="date" name="date" />
+        </div>
+        <div class="inputrow">
+            <label for="salary">Salary:</label>
+            <input type="text" id="salary" value="@Model.salary" name="salary" />
+
+        </div>
+        <div class="inputrow">
+            <input type="submit" value="Create Teacher" />
+        </div>
+    </form>
+</div>
